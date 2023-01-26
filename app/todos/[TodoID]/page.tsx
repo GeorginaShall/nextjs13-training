@@ -11,7 +11,7 @@ const fetchTodo = async (TodoID:string) => {
     console.log(TodoID)
 
     const res = await fetch('https://jsonplaceholder.typicode.com/todos/'+TodoID);
-    const todo: Todo []= await res.json();
+    const todo: Todo = await res.json();
 
     return todo;
     console.log(todo)
