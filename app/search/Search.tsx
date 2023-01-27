@@ -12,7 +12,7 @@ function Search() {
         e.preventDefault();
         setSearch("");
       //  router.push('/search/'+ search) //run on local host
-      router.push('/search/${search}')
+      router.push('http://localhost:3000/search/${search}')
     };
 
 

@@ -21,8 +21,7 @@ type SearchResult = {
 const search = async (searchTerm:string) => {
     const res= await fetch(
        // 'https://serpapi.com/search.json?q='+searchTerm +'&api_key='+ process.env.API_KEY     //run on local host
-       //"https://serpapi.com/search.json?q=${searchTerm}&api_key={process.env.API_KEY}"
-       "http://localhost:3000/search/${searchTerm}"
+       "https://serpapi.com/search.json?q=${searchTerm}&api_key={process.env.API_KEY}"
 
     );
 
