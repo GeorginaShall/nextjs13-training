@@ -29,6 +29,7 @@ const search = async (searchTerm:string) => {
     return data;
 }
 
+
 async function SearchResults({ params: {searchTerm}} : PageProps) {
 
     const SearchResults = await search(searchTerm);
