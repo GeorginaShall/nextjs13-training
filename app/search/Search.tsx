@@ -11,7 +11,7 @@ function Search() {
     const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSearch("");
-        router.push('/users/search/'+ search)
+        router.push('/search/'+ search)
     };
 
 
