@@ -11,8 +11,8 @@ type SearchResult = {
         {
             position: number;
             title: string;
-            link: string;
-            thumbnail: string;
+         //   link: string;
+         //   thumbnail: string;
             snippet:string;
         }
     ];
@@ -21,7 +21,7 @@ type SearchResult = {
 const search = async (searchTerm:string) => {
     const res= await fetch(
        // 'https://serpapi.com/search.json?q='+searchTerm +'&api_key='+ process.env.API_KEY     //run on local host
-       'https://serpapi.com/search.json?q=${searchTerm}&api_key={process.env.API_KEY}'
+       "https://serpapi.com/search.json?q=${searchTerm}&api_key={process.env.API_KEY}"
 
     );
 
