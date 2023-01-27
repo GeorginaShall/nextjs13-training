@@ -15,8 +15,8 @@ const fetchTodo = async (TodoID:string) => {
 
     const res = await fetch(
         
-       // 'https://jsonplaceholder.typicode.com/todos/'+TodoID //run on local host
-       'https://jsonplaceholder.typicode.com/todos/${TodoID}'
+        'https://jsonplaceholder.typicode.com/todos/'+TodoID //run on local host
+      // 'https://jsonplaceholder.typicode.com/todos/${TodoID}'
         
         , 
     {next : {revalidate:60 }}
