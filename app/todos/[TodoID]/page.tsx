@@ -13,7 +13,12 @@ type PageProps = {
 const fetchTodo = async (TodoID:string) => {
     console.log(TodoID)
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos/'+TodoID , 
+    const res = await fetch(
+        
+       // 'https://jsonplaceholder.typicode.com/todos/'+TodoID //run on local host
+       'https://jsonplaceholder.typicode.com/todos/${TodoID}'
+        
+        , 
     {next : {revalidate:60 }}
     );
 

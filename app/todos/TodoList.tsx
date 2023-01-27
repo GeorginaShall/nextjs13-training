@@ -20,7 +20,12 @@ async function TodoList() {
     <>
     {todos.map((todo) =>(
         <p key={todo.id}>
-            <Link href={"/todos/"+ todo.id}> Todo: {todo.id}
+            <Link href={
+           //   "/todos/"+ todo.id      //run on local host
+           "/todos/${todo.id}"
+            }   
+              
+              > Todo: {todo.id}  
             </Link>
         </p>
     ))} 
