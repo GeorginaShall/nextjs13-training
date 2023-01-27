@@ -7,6 +7,7 @@ function Home() {
   return (
     <div className="text-center">
       
+      <h1 className="flex space-x-2 py-4">  This is home page</h1>
       <Suspense fallback={<p className="text-red-500">Loading the Todos...</p>}>
         <h1>Loading Todos</h1>
         <div className="flex space-x-2">
