@@ -11,7 +11,7 @@ function Search() {
     const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setSearch("");
-       router.push('/search/'+ search) //run on local host
+       router.push('/users/search/'+ search) //run on local host
        //router.push('http://localhost:3000/search/${search}')
     };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from "next/link";
-import { Todo } from "../../typings";
+import { Todo } from "../../../typings";
 
 const fetchTodos = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
@@ -21,7 +21,7 @@ async function TodoList() {
     {todos.map((todo) =>(
         <p key={todo.id}>
             <Link href={
-             "/todos/"+ todo.id      //run on local host
+             "/users/todos/"+ todo.id      //run on local host
            //"/todos/${todo.id}"
             }   
               
