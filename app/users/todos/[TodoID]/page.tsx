@@ -1,5 +1,8 @@
 import React from 'react'
-import { Todo } from "../../../typings";
+import { Todo } from "../../../../typings";
+import { notFound } from "next/navigation";
+
+export const dynamicParams = true;
 
 type PageProps = {
     params: {
@@ -10,7 +13,10 @@ type PageProps = {
 const fetchTodo = async (TodoID:string) => {
     console.log(TodoID)
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos/'+TodoID);
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/'+TodoID , 
+    {next : {revalidate:60 }}
+    );
+
     const todo: Todo = await res.json();
 
     return todo;
@@ -22,6 +28,8 @@ async function TodoPage({ params : {TodoID}} : PageProps) {
     console.log(TodoID)
     const todo = await fetchTodo(TodoID);
     console.log(todo)
+
+    if (!todo.id) return notFound()
 
 
     return (
@@ -48,3 +56,15 @@ async function TodoPage({ params : {TodoID}} : PageProps) {
 }
 
 export default TodoPage
+
+export async function generateStaticParams(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/');
+
+    const todos: Todo [] = await res.json();
+
+    const trimmedTodos = todos.splice(0,10);
+
+    return trimmedTodos.map(todo => ({
+        TodoID : todo.id.toString(),
+    }))
+}

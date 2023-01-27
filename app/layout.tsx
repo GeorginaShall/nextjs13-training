@@ -8,7 +8,11 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head />
+      <head>
+        <title>
+          Nextjs 13 Georgina
+        </title>
+      </head>
       <body>
         <Header />
         {children}
